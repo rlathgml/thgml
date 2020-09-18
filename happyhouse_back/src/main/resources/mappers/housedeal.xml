@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/gueset.xml -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.HouseDAO"> <!-- mybatis는 namespace필수!! -->
+	<select id="selectHouseDeal"
+	parameterType="com.ssafy.happyhouse.util.Search" 
+	resultType="HouseDeal">
+		select hd.no,
+			   hd.dong,
+			   hd.aptName,
+			   hd.code,
+			   hd.dealAmount,
+			   hd.buildYear,
+			   hd.dealYear,
+			   hd.dealMonth,
+			   hd.dealDay,
+			   hd.area,
+			   hd.floor,
+			   hd.jibun,
+			   hd.type,
+			   hd.rentMoney,
+			   dc.lat,
+			   dc.lng
+		  from housedeal as hd
+		  join dongcode as dc
+		    on hd.code = dc.dongcode
+		   and trim(hd.dong) = trim(dc.dong)
+		 <trim prefix="where" prefixOverrides="AND|OR">
+		 	<if test="keyword=='dong' and word != null and word != ''">
+		 		and trim(hd.dong) like concat('%', #{word}, '%')
+		 	</if>
+		 	<if test="keyword=='apt' and word != null and word != ''">
+		 		and trim(hd.aptName) like concat('%', #{word}, '%')
+		 	</if>
+		 </trim>
+		 order by no
+		 limit #{startList}, #{listSize}
+	</select>
+	<select id="selectHouseDealByNo" resultType="HouseDeal">
+		select * 
+		  from housedeal 
+		 where no = #{no}
+	</select>
+	<select id="selectHouseDealCnt" 
+	parameterType="com.ssafy.happyhouse.util.Search"
+	resultType="int">
+		select count(*)
+		  from housedeal as hd
+		  <trim prefix="where" prefixOverrides="AND|OR">
+		 	<if test="keyword=='dong' and word != null and word != ''">
+		 		and trim(hd.dong) like concat('%', #{word}, '%')
+		 	</if>
+		 	<if test="keyword=='apt' and word != null and word != ''">
+		 		and trim(hd.aptName) like concat('%', #{word}, '%')
+		 	</if>
+		 </trim>	
+	</select>
+	
+	<select id="selectHouseDealTop" resultType="HouseDeal">
+		select *
+		  from housedeal
+		  join interest_top
+		    on housedeal.no = interest_top.no
+		 limit 5
+	</select>
+</mapper>   

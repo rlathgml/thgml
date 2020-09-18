@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/gueset.xml -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.ShopDAO"> <!-- mybatis는 namespace필수!! -->
+	<select id="selectShop"
+	parameterType="com.ssafy.happyhouse.util.Search" 
+	resultType="shop">
+		select no,
+               shopname as shopName,
+               codename3 as codeName3,
+               citycode as cityCode,
+               city,
+               gucode as guCode,
+               gu,
+               dong,
+               dongcode as dongCode,
+               jibuaddress as jibuAddress,
+               address,
+               oldpostcode as oldPostCode,
+               postcode as postCode,
+               lng,
+               lat
+		  from shop
+		 <trim prefix="where" prefixOverrides="AND|OR">
+		 	<if test="keyword=='dong' and word != null and word != ''">
+		 		and trim(dong) like concat('%', #{word}, '%')
+		 	</if>
+		 	<if test="keyword=='shop' and word != null and word != ''">
+		 		and trim(shopname) like concat('%', #{word}, '%')
+		 	</if>
+		 </trim>
+		 order by no
+		 limit #{startList}, #{listSize}
+	</select>
+	<select id="selectShopByNo" resultType="Shop">
+		select * 
+		  from shop 
+		 where no = #{no}
+	</select>
+	<select id="selectShopCnt" 
+	parameterType="com.ssafy.happyhouse.util.Search"
+	resultType="int">
+		select count(*) as listCnt
+		  from shop
+		  <trim prefix="where" prefixOverrides="AND|OR">
+		 	<if test="keyword=='dong' and word != null and word != ''">
+		 		and trim(dong) like concat('%', #{word}, '%')
+		 	</if>
+		 	<if test="keyword=='shop' and word != null and word != ''">
+		 		and trim(shopname) like concat('%', #{word}, '%')
+		 	</if>
+		 </trim>	
+	</select>
+</mapper>   

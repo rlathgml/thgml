@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mappers/gueset.xml -->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.InterestDAO"> <!-- mybatis는 namespace필수!! -->
+	<select id="selectInterestByUserId" parameterType="string" resultType="Interest">
+		select no,
+			   userid,
+			   AptName as aptName,
+			   gu,
+			   dong
+		  from interest
+		 where userid = #{userId}
+	</select>
+	
+	
+	
+	<select id="selectInterestCnt" parameterType="string" resultType="int">
+		select count(*)
+		  from interest
+		 where userid=#{userId}
+	</select>
+	
+	<insert id="insertInterest" parameterType="Interest">
+		insert into interest(
+					  no,
+					  userid,
+					  AptName,
+					  dong
+					) values (
+					  #{no},
+					  #{userId},
+					  #{aptName},
+					  #{dong}
+					)
+	</insert>	
+	
+	<select id="existsInterestTop" parameterType="int" resultType="int">
+		select count(*)
+		  from interest_top
+		 where no = #{no}
+	</select>
+	
+	<select id="selectInterestTop" resultType="Interest">
+	 	select hd.no,
+	 		   hd.AptName,
+	 		   hd.dong,
+	 		   intert.count
+	 	  from housedeal as hd
+	 	  join interest_top as intert
+	 	    on hd.no = intert.no
+	 	 order by intert.count desc
+	 	 limit 5;
+	</select>
+	
+	<insert id="insertInterestTop" parameterType="Interest">
+		insert into interest_top(
+						no,
+						count
+					) values (
+						#{no},
+						1
+					)
+	</insert>
+	
+	<update id="updateInterestTop" parameterType="int">
+		update interest_top
+		   set count = count + 1
+		 where no = #{no}
+	</update>	
+	
+	<delete id="deleteInterest" parameterType="int">
+		delete
+		  from interest
+		 where no = #{no}
+	</delete>	
+</mapper>   
