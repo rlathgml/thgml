@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e01787dc-d7f2-43d6-9a0e-031918f2cb33" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/dataset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/Basic_CNNs_TensorFlow2/test_image/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lastmeal/menus/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lastmeal/menus/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iHUIjNbcq2YeTqFFb6MHn8mura" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e01787dc-d7f2-43d6-9a0e-031918f2cb33" name="Default Changelist" comment="" />
+      <created>1601563933014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601563933014</updated>
+      <workItem from="1601563937336" duration="1000" />
+    </task>
+    <servers />
+  </component>
+</project>

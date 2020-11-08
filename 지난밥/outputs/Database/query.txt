@@ -1,0 +1,87 @@
+﻿-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- member Table Create SQL
+CREATE TABLE member
+(
+    `memberNo`     INT             NOT NULL    AUTO_INCREMENT COMMENT '멤버넘버', 
+    `email`        VARCHAR(255)    NOT NULL    COMMENT '이메일', 
+    `password`     VARCHAR(255)    NOT NULL    COMMENT '패스워드', 
+    `profilePath`  VARCHAR(255)    NULL        COMMENT '프로필사진', 
+    `nickname`     VARCHAR(255)    NOT NULL    COMMENT '닉네임', 
+    `gender`       CHAR(1)         NOT NULL    COMMENT '성별', 
+    `height`       INT             NULL        COMMENT '키', 
+    `weight`       INT             NULL        COMMENT '몸무게', 
+    PRIMARY KEY (memberNo)
+);
+
+ALTER TABLE member COMMENT '회원';
+
+
+-- member Table Create SQL
+CREATE TABLE disease
+(
+    `diseaseNo`    INT             NOT NULL    AUTO_INCREMENT COMMENT '질병 넘버', 
+    `diseaseName`  VARCHAR(255)    NOT NULL    COMMENT '질병 이름', 
+    `diseaseInfo`  VARCHAR(255)    NOT NULL    COMMENT '질병정보', 
+    PRIMARY KEY (diseaseNo)
+);
+
+ALTER TABLE disease COMMENT '질병정보';
+
+
+-- member Table Create SQL
+CREATE TABLE menu
+(
+    `menuNo`       INT             NOT NULL    AUTO_INCREMENT COMMENT '메뉴 넘버', 
+    `memberNo`     INT             NOT NULL    COMMENT '멤버 넘버', 
+    `menuImgPath`  VARCHAR(255)    NOT NULL    COMMENT '식사 이미지', 
+    `menuList`     VARCHAR(255)    NOT NULL    COMMENT '식사 메뉴', 
+    `eatTime`      TIMESTAMP       NOT NULL    COMMENT '식사 시간', 
+    PRIMARY KEY (menuNo)
+);
+
+ALTER TABLE menu COMMENT '식단';
+
+ALTER TABLE menu
+    ADD CONSTRAINT FK_menu_memberNo_member_memberNo FOREIGN KEY (memberNo)
+        REFERENCES member (memberNo) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+-- member Table Create SQL
+CREATE TABLE nutritional
+(
+    `nutritionalNo`    INT             NOT NULL    AUTO_INCREMENT COMMENT '영양정보 넘버', 
+    `nutritionalName`  VARCHAR(255)    NULL        COMMENT '메뉴이름', 
+    `tan`              INT             NULL        COMMENT '탄수화물', 
+    `dan`              INT             NULL        COMMENT '단백질', 
+    `ji`               INT             NULL        COMMENT '지방', 
+    `dang`             INT             NULL        COMMENT '당', 
+    `na`               INT             NULL        COMMENT '나트륨', 
+    `cal`              INT             NULL        COMMENT '열량', 
+    `col`              INT             NULL        COMMENT '콜레스테롤', 
+    PRIMARY KEY (nutritionalNo)
+);
+
+ALTER TABLE nutritional COMMENT '영양정보';
+
+
+-- member Table Create SQL
+CREATE TABLE checkList
+(
+    `checkNo`    INT    NOT NULL    AUTO_INCREMENT COMMENT '질환체크리스트 넘버', 
+    `memberNo`   INT    NOT NULL    COMMENT '멤버 넘버', 
+    `diseaseNo`  INT    NOT NULL    COMMENT '질병 넘버', 
+    PRIMARY KEY (checkNo)
+);
+
+ALTER TABLE checkList COMMENT '질환 체크리스트';
+
+ALTER TABLE checkList
+    ADD CONSTRAINT FK_checkList_memberNo_member_memberNo FOREIGN KEY (memberNo)
+        REFERENCES member (memberNo) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE checkList
+    ADD CONSTRAINT FK_checkList_diseaseNo_disease_diseaseNo FOREIGN KEY (diseaseNo)
+        REFERENCES disease (diseaseNo) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
